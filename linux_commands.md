@@ -14,8 +14,9 @@ Get-WindowsCapability -Online | Where-Object Name -like '*OpenSSH*'
 
 # Generating an SSH key now just works
 > previously we needed PuTTYGen
+```powershell
 ssh-keygen -t ed25519
-
+```
 # Equivalent to ssh-copy-id myspecialserver
 ```powershell
 Get-Content $HOME\.ssh\id_ed25519.pub | ssh redacted@myspecialserver.co.uk "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
