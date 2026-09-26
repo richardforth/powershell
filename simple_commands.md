@@ -49,3 +49,17 @@ PS C:\WINDOWS\system32> ihy 28
 Write-Host "Hello World!"
 Hello World!
 ```
+
+## Write-Output vs Write-Host
+> Write-Output  puts it's output in the pipeline, Write-Host does not.
+> Im not sure what that means yet for powershell, but I am sure all will
+> become clear, when it does, I'll come back and provide an example, but
+> for now, I will assume it means something equivalent to bash's:
+```bash
+echo "Hello World" | awk '{print $1}' # outputs Hello
+```
+```powershell
+PS C:\WINDOWS\system32> Write-Output "Hello World!"
+Hello World!
+```
+> For now, it looks like the same as Write-Host, but I trust the process!
