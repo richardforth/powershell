@@ -41,3 +41,11 @@ PS C:\WINDOWS\system32> Invoke-History 28
 Write-Host "Hello World!"
 Hello World!
 ```
+
+## History invocation with shorthand version
+> Invoke-History has a shorthand version: ihy
+```powershell
+PS C:\WINDOWS\system32> ihy 28
+Write-Host "Hello World!"
+Hello World!
+```
