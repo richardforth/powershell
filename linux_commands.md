@@ -16,3 +16,23 @@ Get-WindowsCapability -Online | Where-Object Name -like '*OpenSSH*'
 ```powershell
 ssh myspecialhostname
 ```
+
+# An equivalent to `sleep 120 && ssh myspecialhost`
+```powershell
+sleep 120; ssh myspecialhost
+```
+> note its not exactly alike, the semicolon just says run the next command despite the exit code of the previous command
+
+# Backgrounding, subshells, and jobs
+```powershell
+Start-Job {
+    Start-Sleep -Seconds 10
+}
+
+Get-Job
+Id Name PSJobTypeName State     HasMoreData Location
+-- ---- ------------- -----     ----------- --------
+1  Job1 BackgroundJob Running   True        localhost
+
+Stop-Job 1; Remove-Job 1
+
