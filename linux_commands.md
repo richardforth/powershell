@@ -12,9 +12,23 @@ ping myspecialhostname
 Get-WindowsCapability -Online | Where-Object Name -like '*OpenSSH*'
 ```
 
+# Generating an SSH key now just works
+> previously we needed PuTTYGen
+ssh-keygen -t ed25519
+
+# Equivalent to ssh-copy-id myspecialserver
+```powershell
+Get-Content $HOME\.ssh\id_ed25519.pub | ssh redacted@myspecialserver.co.uk "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+```
+
 > A game changer - I thought I needed PuTTY or MobaXTerm turns out, I can do that right from the console now
 ```powershell
-ssh myspecialhostname
+ssh myspecialserver
+```
+
+# scp also works
+```powershell
+scp redacted@myspecialserver.co.uk:~/.bash_history bash_history_redacted.txt
 ```
 
 # An equivalent to `sleep 120 && ssh myspecialhost`
