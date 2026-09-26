@@ -7,7 +7,7 @@ ping myspecialhostname
 ```
 
 # SSH works
-> A game changer - I thought I needed PuTTY or MobaXTermm turns out, I can do that right from the console now
+> A game changer - I thought I needed PuTTY or MobaXTerm turns out, I can do that right from the console now
 ```powershell
 ssh myspecialhostname
 ```
